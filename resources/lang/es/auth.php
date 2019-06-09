@@ -13,8 +13,8 @@ return [
     |
     */
 
-    'failed' => 'Las credenciales son invalidad.',
-    'throttle' => 'Porfavor prueba de nuevo en unos segundos.',
+    'failed' => 'Estas credenciales no coinciden con nuestros registros.',
+    'throttle' => 'Demasiados intentos de acceso. Por favor, inténtelo de nuevo en :segundos.',
     'email'=>'Correo',
     'password'=>'Contraseña',
     'repeatpassword'=>'Repetir Contraseña',
