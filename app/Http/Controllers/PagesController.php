@@ -32,19 +32,19 @@ class PagesController extends Controller
         $msg="El campo {0} es Obligatorio";
         $data = $request->input('Nombre');
         if($data==""){
-            array_push($error,str_replace("{0}","Nombre",$msg));
+            array_push($error,'index.error.name');
         }
         $data = $request->input('Apellido');
         if($data==""){
-            array_push($error,str_replace("{0}","Apellido",$msg));
+            array_push($error,'index.error.lastname');
         }
         $data = $request->input('Cedula');
         if($data==""){
-            array_push($error,str_replace("{0}","Cedula",$msg));
+            array_push($error,'index.error.ci');
         }
         $data = $request->input('Edad');
         if($data==""){
-            array_push($error,str_replace("{0}","Edad",$msg));
+            array_push($error,'index.error.age');
         }
 
         if(sizeof($error)>0){
@@ -68,17 +68,17 @@ class PagesController extends Controller
         $msg="El campo {0} es Obligatorio";
         $data = $request->input('Nombre');
         if($data==""){
-            array_push($error,str_replace("{0}","Nombre",$msg));
+            array_push($error,'index.error.name');
         }
         $data = $request->input('Apellido');
         if($data==""){
-            array_push($error,str_replace("{0}","Apellido",$msg));
+            array_push($error,'index.error.lastname');
         }
         $cedula=$request->input("Cedula");
 
         $data = $request->input('Edad');
         if($data==""){
-            array_push($error,str_replace("{0}","Edad",$msg));
+            array_push($error,'index.error.age');
         }
 
         if(sizeof($error)>0){
@@ -89,7 +89,7 @@ class PagesController extends Controller
             $request->session()->forget('error');
             $form=$form->find($cedula);
             $form->edit($request);
-            session(['success' => "Se ha modificado con exito el registro "]);
+            session(['success' => "index.success"]);
             return redirect()->route('update',compact('cedula'))->withInput();
         }
     }

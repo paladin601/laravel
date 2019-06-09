@@ -6,7 +6,7 @@
 
 
 @section('header')
-    Detalles del Formulario
+    {{ trans('index.details.form') }}
 @endsection
 @section('content')
     @if ($data)
@@ -16,13 +16,13 @@
         <table class="table table-striped table-dark  ">
             <thead>
                 <tr>
-                    <th scope="col" class="text-center">Nombre</th>
-                    <th scope="col" class="text-center">Apellido</th>
-                    <th scope="col" class="text-center">Cedula</th>
-                    <th scope="col" class="text-center">Sexo</th>
-                    <th scope="col" class="text-center">Edad</th>
-                    <th scope="col" class="text-center">Casado</th>
-                    <th scope="col" class="text-center">Acciones</th>
+                    <th scope="col" class="text-center">{{ trans('index.name') }}</th>
+                    <th scope="col" class="text-center">{{ trans('index.lastname') }}</th>
+                    <th scope="col" class="text-center">{{ trans('index.ci') }}</th>
+                    <th scope="col" class="text-center">{{ trans('index.sex') }}</th>
+                    <th scope="col" class="text-center">{{ trans('index.age') }}</th>
+                    <th scope="col" class="text-center">{{ trans('index.married') }}</th>
+                    <th scope="col" class="text-center">{{ trans('index.accions') }}</th>
                 </tr>
             </thead>
             <tbody class="data">
@@ -33,17 +33,17 @@
                         <td class="text-center">{{$d1->Cedula}}</td>
                         <td class="text-center">
                             @if($d1->Sexo=='M')
-                                Masculino
+                                {{ trans('index.male') }}
                             @else
-                                Femenino
+                                {{ trans('index.female') }}
                             @endif
                             </td>
                         <td class="text-center">{{$d1->Edad}}</td>
                         <td class="text-center">
                             @if ($d1->Casado)
-                                Casado
+                                {{ trans('index.married') }}
                             @else    
-                                Soltero
+                                {{ trans('index.unmarried') }}
                             @endif
                             </td>
                         <td class="actions">
@@ -78,7 +78,7 @@
                         if(h.length==0){
                             let data=$(".table-responsive")[0].parentElement;
                             $(".table-responsive")[0].remove();
-                            data.append('Se elimino el ultimo registro');
+                            data.append("{{ trans('index.deletelastrecord') }}");
                         }
                         $('#modal_delete').modal('hide');
                         $('body').removeClass('modal-open');
@@ -92,9 +92,9 @@
         @else
             <div class="alert alert-danger alert-dismissible">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                <strong>No Existen registros</strong>
+                <strong>{{ trans('index.norecords') }}</strong>
             </div>
-            <a class="btn btn-success btn-lg btn-block" href="{{ route('indexClean') }}">Ir al Formulario</a>
+            <a class="btn btn-success btn-lg btn-block" href="{{ route('indexClean') }}">{{ trans('index.goform') }}</a>
         @endif
 
 @endsection

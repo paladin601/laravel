@@ -24,7 +24,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('indexClean') }}">
-                    {{ __('Formulario') }}
+                    {{ trans('navbar.form') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -35,7 +35,7 @@
                     @auth
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('detail') }}">{{ __('Detalles') }}</a>
+                                <a class="nav-link" href="{{ route('detail') }}">{{ trans('navbar.details') }}</a>
                             </li>
                         </ul>
                     @endauth
@@ -45,11 +45,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar Sesion') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ trans('navbar.login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ trans('navbar.register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -62,7 +62,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Cerrar Sesion') }}
+                                        {{ trans('navbar.logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -70,8 +70,21 @@
                                     </form>
                                 </div>
                             </li>
-                        @endguest
+                            @endguest
+                                <li class="nav-item dropdown">
+                                    <a id="language" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                            {{ trans('navbar.language') }} <span class="caret"></span>
+                                    </a>
+            
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="language">
+                                        
+                                        <a class="dropdown-item" href="{{ url('lang', ['en']) }}">En</a>
+                                        <a class="dropdown-item" href="{{ url('lang', ['es']) }}">Es</a>
+                                        
+                                    </div>
+                            </li>
                     </ul>
+
                 </div>
             </div>
         </nav>
