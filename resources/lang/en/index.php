@@ -14,7 +14,6 @@ return [
     */
 
     'logged' => 'You need log-in.',
-    'form' => 'Form',
     'name' => 'Name',
     'lastname'=> 'Last Name',
     'ci' => 'Cedule',

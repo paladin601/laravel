@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('header')
-    {{ trans('index.form') }}
+    {{ trans('navbar.form') }}
 @endsection
 
 @section('css')

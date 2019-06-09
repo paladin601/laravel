@@ -80,6 +80,7 @@
                                         
                                         <a class="dropdown-item" href="{{ url('lang', ['en']) }}">En</a>
                                         <a class="dropdown-item" href="{{ url('lang', ['es']) }}">Es</a>
+                                        <a class="dropdown-item" href="{{ url('lang', ['fr']) }}">Fr</a>
                                         
                                     </div>
                             </li>

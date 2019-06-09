@@ -14,7 +14,6 @@ return [
     */
 
     'logged' => 'Necesitas estar logeado.',
-    'form' => 'Formulario',
     'name' => 'Nombre',
     'lastname'=> 'Apellido',
     'ci' => 'Cedula',
