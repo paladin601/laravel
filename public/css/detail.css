@@ -1,0 +1,16 @@
+.actions{
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-actions{
+    background: transparent !important; 
+    padding: 5px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    color:white;
+}
+
+.btn-actions+.btn-actions{
+    color:red !important;
+}
